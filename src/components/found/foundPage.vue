@@ -7,15 +7,37 @@
             <el-input type="primery" class="searchInput" v-model="searchKeyWord" clearable placeholder="情书"></el-input>
             <span id="searchTitle">搜索</span>
         </div>
-        <div id="news"></div>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="news"></div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="news"></div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="news"></div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="news"></div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 <script>
+import Swiper from 'Swiper'
 export default {
     data() {
         return {
             searchKeyWord: ''
         }
+    },
+    mounted: function() {
+        var mySwiper = new Swiper('.swiper-container', {
+            slidesPerView : 1,
+            centeredSlides : true,
+        });
     }
 }
 </script>
@@ -80,7 +102,7 @@ export default {
     text-align: center;
     color: #606266;
 }
-#news {
+.news {
     margin: auto;
     width: 85%;
     height: 550px;
