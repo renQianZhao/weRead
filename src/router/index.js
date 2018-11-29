@@ -20,9 +20,10 @@ export default new Router({
             path: '/main',
             name: 'main',
             component: mainPage,
+            redirect: '/found',
             children: [
                 {
-                    path: '/',
+                    path: '/found',
                     name: 'found',
                     component: foundPage
                 },
